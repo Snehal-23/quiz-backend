@@ -63,6 +63,7 @@ exports.login = async (req, res) => {
     res.status(200).json({
       token: token,
       user: user.email,
+      user_id: user.id,
       status: 1,
       message: "User authenticated",
     });

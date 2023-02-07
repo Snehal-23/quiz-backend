@@ -12,12 +12,12 @@ router.get("/", auth.optional, quizController.getAllQuiz);
 router.get("/:id", auth.optional, quizController.getQuiz);
 
 //post quiz
-router.post("/addQuestion", auth.optional, quizController.postQuestion);
+router.post("/addQuestion", auth.required, quizController.postQuestion);
 
 //post quiz
-router.post("/addQuiz", auth.optional, quizController.postQuiz);
+router.post("/addQuiz", auth.required, quizController.postQuiz);
 
 //delete quiz
-router.post("/delete/:id", auth.optional, quizController.deleteQuiz);
+router.post("/delete/:id", auth.required, quizController.deleteQuiz);
 
 module.exports = router;

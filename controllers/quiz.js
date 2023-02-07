@@ -8,7 +8,7 @@ const Quiz = require("../models/quiz");
 exports.postQuestion = async (req, res) => {
   const question = new Question({
     question: req.body.question,
-    noOfOptions: req.body.noOfOptions,
+    totalOptions: req.body.totalOptions,
     options: req.body.options,
     correctOptions: req.body.correctOptions,
   });
@@ -54,6 +54,7 @@ exports.postQuiz = (req, res) => {
     questions: req.body.questions,
     user: req.body.user,
     count: req.body.count,
+    quizTitle: req.body.quizTitle,
   });
   quiz
     .save()

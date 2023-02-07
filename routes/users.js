@@ -19,7 +19,7 @@ router.post("/count", auth.required, userController.countUsers);
 router.post("/delete/:id", auth.required, userController.deleteUser);
 
 //GET users
-router.get("/", auth.optional, userController.getUsers);
+router.get("/", auth.required, userController.getUsers);
 
 //fetch single user
 router.post("/:id", auth.required, userController.getUser);
