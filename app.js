@@ -41,22 +41,22 @@ app.get(`/`, (req, res) => {
 });
 
 //development
-// mongoose
-//   .connect(process.env.CONN_STRING)
-//   .then(() => {
-//     app.listen(5000, () => {
-//       console.log(`Server is running on port 5000.`);
-//     });
-//   })
-//   .catch((err) => {
-//     console.log(err);
-//   });
+mongoose
+  .connect(process.env.CONN_STRING)
+  .then(() => {
+    app.listen(5000, () => {
+      console.log(`Server is running on port 5000.`);
+    });
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 
 // prduction
-var server = app.listen(process.env.PORT || 5000, function () {
-  console.log(
-    "Express server listening on port %d in %s mode",
-    this.address().port,
-    app.settings.env
-  );
-});
+// var server = app.listen(process.env.PORT || 5000, function () {
+//   console.log(
+//     "Express server listening on port %d in %s mode",
+//     this.address().port,
+//     app.settings.env
+//   );
+// });
